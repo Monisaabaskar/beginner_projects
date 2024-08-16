@@ -17,14 +17,9 @@ import sys
 
 def rotateLeft(d, arr):
     # Write your code here
-    count = 0
-    while d > count : # 2 < 0
-        for idx in range (len(arr)):
-            if idx == 0:
-                value = arr.pop(idx)
-        arr.append(value)
-        count +=1 
-    return(arr)
+    real_d = d % len(arr)
+    rot_arr = arr[real_d:] + arr[:real_d]
+    return(rot_arr)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
